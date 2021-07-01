@@ -1,0 +1,30 @@
+<form>
+  <input type="text" [(ngModel)]="product.name" nane="name" placeholder="tên sản phẩm">
+  <button (click)="addProduct()">Thêm sản phẩm</button>
+</form>
+<table>
+  <tr>
+    <th>STT</th>
+    <th>NAME</th>
+    <th>IMAGE</th>
+    <td>STATUS</td>
+    <th>PRICE</th>
+    <th>ACTION</th>
+  </tr>
+  <tr *ngFor="let product of products">
+    <td>{{product.id}}</td>
+    <td>{{ product.name }}</td>
+    <td><img [src]="product.image" width="50" alt="" /></td>
+    <td>{{ product.status ? "con hang" : "het hang" }}</td>
+    <td>{{ product.name }}</td>
+    <td>
+      <input type="text" (keypress)="onChangeValue($event)" />
+      <input type="text" [(ngModel)]="product.name" placeholder="đồng bộ" />
+    </td>
+    <!-- <td>
+      <button [disabled]="product.status" class="bg-red-500">click me !</button>
+    </td> -->
+    <!-- <td><button class="bg-indigo-400 p-2 rounded-md text-white" (click)="changeStatus()">Thay đổi trạng thái</button></td> -->
+    <td><button class="bg-red-500 p-2 text-white rounded-md" (click)="removeItem(product.id)">Xoá sản phẩm</button></td>
+  </tr>
+</table>
