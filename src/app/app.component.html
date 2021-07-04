@@ -1,3 +1,4 @@
 <div class="container mx-auto">
-    <app-products></app-products>
+    <app-product-add (data)="onAdd($event)"></app-product-add>
+    <app-products [products]="products"></app-products>
 </div>

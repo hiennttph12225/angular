@@ -4,5 +4,4 @@ export interface ProductType  {
     price : number;
     image : string;
     status : boolean;
-
 }

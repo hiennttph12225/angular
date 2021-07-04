@@ -1,0 +1,11 @@
+<form action="">
+      <div class="grid grid-cols-2">
+            <div>
+                  <input type="text" [(ngModel)]="product.name" name="name">
+            </div>
+            <div>
+                  <input type="text" [(ngModel)]="product.price" name="price">
+            </div>
+      </div>
+      <button type="submit" (click)="onAddProduct()" class="text-black">Thêm sản phẩm</button>
+</form>
