@@ -1,41 +1,24 @@
-<div>
-  <table>
-    <tr>
-      <th>STT</th>
-      <th>NAME</th>
-      <th>IMAGE</th>
-      <td>STATUS</td>
-      <th>PRICE</th>
-      <th>ACTION</th>
-    </tr>
-    <tr *ngFor="let product of products">
-      <td>{{ product.id }}</td>
-      <td>{{ product.name }}</td>
-      <td><img [src]="product.image" width="50" alt="" /></td>
-      <td>{{ product.status ? "con hang" : "het hang" }}</td>
-      <td>{{ product.price }}</td>
-      <td>
-        <input type="text" (keypress)="onChangeValue($event)" />
-        <input type="text" [(ngModel)]="product.name" placeholder="đồng bộ" />
-      </td>
-      <!-- <td>
-        <button [disabled]="product.status" class="bg-red-500">click me !</button>
-      </td> -->
-      <!-- <td><button class="bg-indigo-400 p-2 rounded-md text-white" (click)="changeStatus()">Thay đổi trạng thái</button></td> -->
-      <td>
-        <button
-          class="bg-red-500 p-2 text-white rounded-md"
-          (click)="removeItem(product.id)"
-        >
-          Xoá sản phẩm
-        </button>
-        <button class="bg-red-500 p-2 text-white rounded-md"
-        (click)="detailItem(product)">Xem chi tiết</button>
-      </td>
-    </tr>
-  </table>
-</div>
-
-<div *ngIf="data">
-  <app-detail [product]="data"></app-detail>
-</div>
+<section class="text-gray-600 body-font" >
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-wrap -m-4" >
+      <div class="lg:w-1/4 md:w-1/2 p-4 w-full" *ngFor="let item of products">
+        <a class="block relative h-48 rounded overflow-hidden" routerLink="/product/{{item._id}}">
+          <img
+            alt="ecommerce"
+            class="w-full h-full block"
+            src="{{item.image}}"
+          />
+        </a>
+        <div class="mt-4">
+          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
+            {{item._id}}
+          </h3>
+          <h2 class="text-gray-900 title-font text-lg font-medium">
+           {{item.name}}
+          </h2>
+          <p class="mt-1">{{item.price}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -10,6 +10,9 @@ import { CategoryComponent } from './category/category.component';
 import { ProductAddComponent } from './product-add/product-add.component';
 import { DetailComponent } from './detail/detail.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { AboutComponent } from './about/about.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 // import { AngularFirestore } from '@angular/fire/firestore/firestore';
 
@@ -20,7 +23,10 @@ import { HomePageComponent } from './home-page/home-page.component';
     CategoryComponent,
     ProductAddComponent,
     DetailComponent,
-    HomePageComponent
+    HomePageComponent,
+    AboutComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -4,13 +4,13 @@ import {productService} from './product.service'
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  templateUrl: `./app.component.html`,
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'web15305';
   product: ProductType = {
-    id: Math.floor(Math.random()* 2000),
+    _id: `fdhf ${Math.floor(Math.random()* 2000)}`,
     name : '',
     price : 300,
     image : "",

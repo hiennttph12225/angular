@@ -9,7 +9,7 @@ import { Component, OnInit  ,Output , EventEmitter } from '@angular/core';
 export class ProductAddComponent implements OnInit {
   @Output() data = new EventEmitter<ProductType>();
   product: ProductType = {
-    id: 0,
+    _id: '',
     name: '',
     price: 123,
     status: true,

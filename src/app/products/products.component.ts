@@ -1,5 +1,6 @@
+import { productService } from './../product.service';
 import { ProductType } from './../productType';
-import { Component, OnInit, Input, Output, EventEmitter,} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-products',
@@ -8,12 +9,18 @@ import { Component, OnInit, Input, Output, EventEmitter,} from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
   // statusDirective = false;
-  @Input() products: ProductType[];
-  data : ProductType;
-  log(msg: any) {
-    console.log(msg);
+  // @Input() products: ProductType[];
+  // data : ProductType;
+  constructor(private productService: productService) {}
+  products: ProductType[];
+  ngOnInit(): void {
+    this.getAllProducts();
   }
-  ngOnInit(): void {}
+  getAllProducts() {
+    this.productService.getProducts().subscribe((data) => {
+      this.products = data;
+    });
+  }
   changeStatus() {
     // this.product.status = !this.product.status;
   }
@@ -21,12 +28,12 @@ export class ProductsComponent implements OnInit {
     // this.product.name = event.target.value
   }
   removeItem(id: number) {
-    this.products = this.products.filter((product) => product.id != id);
+    // this.products = this.products.filter((product) => product.id != id);
   }
   addProduct() {
     // this.products.push(this.product)
   }
-  detailItem(product : ProductType){
-    this.data = product
+  detailItem(product: ProductType) {
+    // this.data = product
   }
 }
