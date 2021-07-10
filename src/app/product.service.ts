@@ -10,7 +10,6 @@ export class productService {
   ngOnInit(){
     this.getAllProducts()
     console.log("show hello");
-    
   }
   api_URL = 'https://headphoneapi.herokuapp.com/api/products'
   getProducts():Observable<ProductType[]>{
@@ -23,7 +22,6 @@ export class productService {
     })
   }
   getDetailProduct(id:any){
-    // let detail = this.products.find(product => product._id == id)
-    // console.log(detail);
+    return this.http.get<ProductType[]>(`${this.api_URL}/${id}`)
   }
 }

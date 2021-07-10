@@ -9,13 +9,6 @@ import {productService} from './product.service'
 })
 export class AppComponent {
   title = 'web15305';
-  product: ProductType = {
-    _id: `fdhf ${Math.floor(Math.random()* 2000)}`,
-    name : '',
-    price : 300,
-    image : "",
-    status : false
-  };
   products: ProductType[]
   constructor(
     private productService : productService

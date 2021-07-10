@@ -1,121 +1,127 @@
-<header
-  role="banner"
-  class="px-0 mx-0 container mx-auto pt-6 mb-6 flex flex-col justify-center"
->
-  <div class="flex flex-wrap lg:px-4">
-    <div class="my-2 pr-2 w-5/12 lg:w-3/12 overflow-hidden">
-      <div class="ml-4 lg:ml-0">
-        <a routerLink="/">
-          <img
-            class="md:pl-6"
-            src="https://pngimage.net/wp-content/uploads/2019/05/fake-logo-png-.png"
-          />
-        </a>
-      </div>
-    </div>
-    <div class="w-5/12 lg:hidden"></div>
-    <div class="my-2 px-2 w-2/12 lg:hidden flex flex-row">
-      <div class="self-center block mr-4 w-full">
+<div class="header-2">
+  <nav class="bg-white py-2 md:py-4 bg-gray-800">
+    <div class="container px-4 mx-auto md:flex md:items-center">
+      <div class="flex justify-between items-center">
+        <a routerLink="/" class="font-bold text-xl text-indigo-600" >FWR</a>
         <button
-          id="nav-toggle"
-          class="text-first"
-          aria-haspopup="true"
-          aria-expanded="false"
-          aria-controls="menu"
-          aria-label="Navigation"
+          class="
+            border border-solid border-gray-600
+            px-3
+            py-1
+            rounded
+            text-white
+            opacity-50
+            hover:opacity-75
+            md:hidden
+          "
+          id="navbar-toggle"
         >
-          <img
-            class="open w-1/2 align-end"
-            src="https://www.flaticon.com/svg/static/icons/svg/1828/1828859.svg"
-          />
-          <img
-            class="close hidden w-1/2"
-            src="https://www.flaticon.com/svg/static/icons/svg/61/61155.svg"
-          />
+          <i class="fas fa-bars"></i>
         </button>
       </div>
-    </div>
-    <div class="lg:w-1/12 hidden lg:block"></div>
-    <div
-      class="
-        w-full
-        lg:w-8/12
-        hidden
-        lg:block
-        bg-black
-        lg:bg-white
-        mt-4
-        lg:mt-0 lg:text-right
-      "
-      id="nav-content"
-      aria-expanded="false"
-    >
-      <div class="px-6 lg:px-0 lg:pt-5 xl:pt-7">
-        <div>
-          <nav
-            role="navigation"
-            aria-labelledby="block-main-menu"
-            id="block-main"
-          >
-            <ul class="list-reset lg:flex justify-end flex-1 items-center">
-              <li
-                class="
-                  inline-block
-                  w-full
-                  text-xl
-                  lg:text-base
-                  font-semibold
-                  no-underline
-                  py-2
-                  lg:px-4
-                "
-              >
-                <a
-                  routerLink="/"
-                  class="text-white lg:text-black no-underline is-active"
-                  >Home</a
-                >
-              </li>
-              <li
-                class="
-                  inline-block
-                  w-full
-                  text-xl
-                  lg:text-base
-                  font-semibold
-                  no-underline
-                  py-2
-                  lg:px-4
-                "
-              >
-                <a
-                  routerLink="/product"
-                  class="text-white lg:text-black no-underline"
-                  >Sản phẩm</a
-                >
-              </li>
-              <li
-                class="
-                  inline-block
-                  w-full
-                  text-xl
-                  lg:text-base
-                  font-semibold
-                  no-underline
-                  py-2
-                  lg:px-4
-                "
-              >
-                <a
-                  routerLink="/about"
-                  class="text-white lg:text-black no-underline is-active"
-                  >Về chúng tôi</a
-                >
-              </li>
-            </ul>
-          </nav>
-        </div>
+
+      <div
+        class="hidden md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0"
+        id="navbar-collapse"
+      >
+        <a routerLink="/home" class="p-2 text-white lg:px-4 md:mx-2 rounded " routerLinkActive="bg-indigo-600 text-white"
+          >Trang chủ</a
+        >
+        <a
+          routerLink="/about" routerLinkActive="bg-indigo-600 text-white"
+          class="
+            p-2
+            lg:px-4
+            md:mx-2
+            
+            rounded
+            hover:bg-gray-200
+            transition-colors
+            duration-300
+            text-white
+          "
+          >Về chúng tôi</a
+        >
+        <a
+          routerLink="/product" routerLinkActive="bg-indigo-600 text-white"
+          class="
+            p-2
+            lg:px-4
+            md:mx-2
+            
+            rounded
+            hover:bg-gray-200 hover:text-gray-700
+            transition-colors
+            duration-300
+            text-white
+          "
+          >Sản phẩm</a
+        >
+        <a
+          routerLink="/news" routerLinkActive="bg-indigo-600 text-white"
+          class="
+            p-2
+            lg:px-4
+            md:mx-2
+            
+            rounded
+            hover:bg-gray-200 hover:text-gray-700
+            transition-colors
+            duration-300
+            text-white
+          "
+          >Tin tức</a
+        >
+        <a
+          routerLink="/contact" routerLinkActive="bg-indigo-600 text-white"
+          class="
+            p-2
+            lg:px-4
+            md:mx-2
+            
+            rounded
+            hover:bg-gray-200 hover:text-gray-700
+            transition-colors
+            duration-300
+            text-white
+          "
+          >Liên hệ</a
+        >
+        <a
+          routerLink="/signin" routerLinkActive="bg-indigo-600 text-white"
+          class="
+            p-2
+            lg:px-4
+            md:mx-2
+           text-center
+            border border-transparent
+            rounded
+            hover:bg-indigo-100 hover:text-indigo-700
+            transition-colors
+            duration-300
+            text-white
+          "
+          >Đăng nhập</a
+        >
+        <a
+          routerLink="/signup" routerLinkActive="bg-indigo-600 text-white"
+          class="
+            p-2
+            text-white
+            lg:px-4
+            md:mx-2
+            text-center
+            border border-solid border-indigo-600
+            rounded
+            hover:bg-indigo-600 hover:text-white
+            transition-colors
+            duration-300
+            mt-1
+            md:mt-0 md:ml-1
+          "
+          >Đăng kí</a
+        >
       </div>
     </div>
-  </div>
-</header>
+  </nav>
+</div>

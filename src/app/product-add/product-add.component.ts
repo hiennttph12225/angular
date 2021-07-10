@@ -14,6 +14,8 @@ export class ProductAddComponent implements OnInit {
     price: 123,
     status: true,
     image: '',
+    comment : [],
+    description : ''
   };
   constructor() {}
 

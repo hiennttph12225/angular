@@ -5,22 +5,29 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.scss']
+  styleUrls: ['./detail.component.scss'],
 })
 export class DetailComponent implements OnInit {
-  @Input() product: ProductType;
+  // @Input() product: ProductType;
+  product_detail: any;
   constructor(
-    private  productService : productService,
-    private route : ActivatedRoute
-  ) { }
+    private productService: productService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    // this.productService.getDetailProduct()
-    this.route.params.subscribe(data=>{
-      this.productService.getDetailProduct(data.id)
-      
-    })
+    this.getProduct();
+
+    // this.route.params.subscribe(data=>{
+    //   this.productService.getDetailProduct(data.id)
+    // })
   }
-
-
+  getProduct() {
+    this.route.params.subscribe((params) => {
+      this.productService.getDetailProduct(params.id).subscribe((data) => {
+        console.log(data);
+        this.product_detail = data;
+      });
+    });
+  }
 }
