@@ -8,19 +8,11 @@ import { Component, OnInit  ,Output , EventEmitter } from '@angular/core';
 })
 export class ProductAddComponent implements OnInit {
   @Output() data = new EventEmitter<ProductType>();
-  product: ProductType = {
-    _id: '',
-    name: '',
-    price: 123,
-    status: true,
-    image: '',
-    comment : [],
-    description : ''
-  };
+  
   constructor() {}
 
   ngOnInit(): void {}
   onAddProduct(){
-    this.data.emit(this.product)
+    
   }
 }

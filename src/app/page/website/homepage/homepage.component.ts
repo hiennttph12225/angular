@@ -1,17 +1,23 @@
-import { productService } from '../product.service';
+import { productService } from './../../../product.service';
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+
 @Component({
-  selector: 'app-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.scss']
+  selector: 'app-homepage',
+  templateUrl: './homepage.component.html',
+  styleUrls: ['./homepage.component.scss']
 })
-export class HomePageComponent implements OnInit {
+export class HomepageComponent implements OnInit {
   products : any
   productSlider  :any
   constructor(
     private productService : productService
   ) { }
+
+  ngOnInit(): void {
+    this.getAllProduct()
+    this.getLimitProduct()
+  }
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: false,
@@ -60,10 +66,7 @@ export class HomePageComponent implements OnInit {
       }
     },
   }
-  ngOnInit(): void {
-    this.getAllProduct()
-    this.getLimitProduct()
-  }
+
   getAllProduct(){
     this.productService.getProducts().subscribe((data) => {
       console.log(data);

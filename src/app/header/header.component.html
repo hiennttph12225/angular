@@ -1,8 +1,16 @@
 <div class="header-2">
+  <div class="bg-indigo-500">
+    <div class="flex justify-between p-2 mx-auto">
+      <h2 class="text-white">🎉 Free ship cho duy nhất trong ngày 6/7</h2>
+      <button class="text-white">&times;</button>
+    </div>
+  </div>
   <nav class="bg-white py-2 md:py-4 bg-gray-800">
     <div class="container px-4 mx-auto md:flex md:items-center">
       <div class="flex justify-between items-center">
-        <a routerLink="/" class="font-bold text-xl text-indigo-600" >FWR</a>
+        <a routerLink="/" class="font-bold text-xl flex">
+          <img src="../../assets/images/logo.png" width="50" alt="" /><span class="mt-2 text-white uppercase">&nbsp; Heaphone</span>
+        </a>
         <button
           class="
             border border-solid border-gray-600
@@ -24,16 +32,19 @@
         class="hidden md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0"
         id="navbar-collapse"
       >
-        <a routerLink="/home" class="p-2 text-white lg:px-4 md:mx-2 rounded " routerLinkActive="bg-indigo-600 text-white"
+        <a
+          routerLink="/home"
+          class="p-2 text-white lg:px-4 md:mx-2 rounded"
+          routerLinkActive="bg-indigo-600 text-white"
           >Trang chủ</a
         >
         <a
-          routerLink="/about" routerLinkActive="bg-indigo-600 text-white"
+          routerLink="/about"
+          routerLinkActive="bg-indigo-600 text-white"
           class="
             p-2
             lg:px-4
             md:mx-2
-            
             rounded
             hover:bg-gray-200
             transition-colors
@@ -43,12 +54,12 @@
           >Về chúng tôi</a
         >
         <a
-          routerLink="/product" routerLinkActive="bg-indigo-600 text-white"
+          routerLink="/product"
+          routerLinkActive="bg-indigo-600 text-white"
           class="
             p-2
             lg:px-4
             md:mx-2
-            
             rounded
             hover:bg-gray-200 hover:text-gray-700
             transition-colors
@@ -58,12 +69,12 @@
           >Sản phẩm</a
         >
         <a
-          routerLink="/news" routerLinkActive="bg-indigo-600 text-white"
+          routerLink="/news"
+          routerLinkActive="bg-indigo-600 text-white"
           class="
             p-2
             lg:px-4
             md:mx-2
-            
             rounded
             hover:bg-gray-200 hover:text-gray-700
             transition-colors
@@ -73,12 +84,12 @@
           >Tin tức</a
         >
         <a
-          routerLink="/contact" routerLinkActive="bg-indigo-600 text-white"
+          routerLink="/contact"
+          routerLinkActive="bg-indigo-600 text-white"
           class="
             p-2
             lg:px-4
             md:mx-2
-            
             rounded
             hover:bg-gray-200 hover:text-gray-700
             transition-colors
@@ -88,23 +99,26 @@
           >Liên hệ</a
         >
         <a
-          routerLink="/signin" routerLinkActive="bg-indigo-600 text-white"
+          routerLink="/signin"
+          routerLinkActive="bg-indigo-600 text-white"
           class="
             p-2
             lg:px-4
             md:mx-2
-           text-center
+            text-center
             border border-transparent
             rounded
             hover:bg-indigo-100 hover:text-indigo-700
             transition-colors
             duration-300
+            border border-solid border-white
             text-white
           "
           >Đăng nhập</a
         >
         <a
-          routerLink="/signup" routerLinkActive="bg-indigo-600 text-white"
+          routerLink="/signup"
+          routerLinkActive="bg-indigo-600 text-white"
           class="
             p-2
             text-white

@@ -1,30 +1,53 @@
-import { SignupComponent } from './signup/signup.component';
-import { SigninComponent } from './signin/signin.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { NewsComponent } from './news/news.component';
-import { ContactComponent } from './contact/contact.component';
+import { ProductDashboardComponent } from './page/admin/product-dashboard/product-dashboard.component';
+import { ProductsPageComponent } from './page/website/products-page/products-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 import { DetailComponent } from './detail/detail.component';
-import { HomePageComponent } from './home-page/home-page.component';
-import { ProductsComponent } from './products/products.component';
+import { LayoutAdminComponent } from './layout/admin/layout-admin/layout-admin.component';
+import { LayoutWebsiteComponent } from './layout/website/layout-website/layout-website.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AdminDashboradComponent } from './page/admin/admin-dashborad/admin-dashborad.component';
+import { AboutComponent } from './page/website/about/about.component';
+import { HomepageComponent } from './page/website/homepage/homepage.component';
+import { NewsComponent } from './page/website/news/news.component';
+import { SiginPageComponent } from './page/website/sigin-page/sigin-page.component';
+import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
-  {path : "" , redirectTo : "/home" ,pathMatch : 'full' },
-  {path : "home" ,  component : HomePageComponent , pathMatch : 'full'},
-  {path: "about" , component:  AboutComponent},
-  {path : "product" , component : ProductsComponent , data : {products : "products"}},
-  {path : "news" , component : NewsComponent},
-  {path : "contact" , component : ContactComponent},
-  {path : "signin" , component : SigninComponent},
-  {path : "signup" , component : SignupComponent},
-  {path : "product/:id" , component : DetailComponent},
-  {path : "**" , component : PageNotFoundComponent}
+  {
+    path: '',
+    component: LayoutWebsiteComponent,
+    children: [
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'home', component: HomepageComponent },
+      { path: 'about', component: AboutComponent },
+      {
+        path: 'product',
+        component: ProductsPageComponent,
+      },
+      { path: 'news', component: NewsComponent },
+      { path: 'contact', component: ContactComponent },
+      { path: 'signin', component: SiginPageComponent },
+      { path: 'signup', component: SignupComponent },
+      { path: 'product/:id', component: DetailComponent },
+     
+    ],
+  },
+  {
+    path: 'admin',
+    component: LayoutAdminComponent,
+    children: [
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'dashboard', component: AdminDashboradComponent },
+      {path : "product" , component:ProductDashboardComponent}
+    ],
+  },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

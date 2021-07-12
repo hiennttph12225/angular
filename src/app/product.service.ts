@@ -9,7 +9,6 @@ export class productService {
   }
   ngOnInit(){
     this.getAllProducts()
-    console.log("show hello");
   }
   api_URL = 'https://headphoneapi.herokuapp.com/api/products'
   getProducts():Observable<ProductType[]>{
@@ -23,5 +22,11 @@ export class productService {
   }
   getDetailProduct(id:any){
     return this.http.get<ProductType[]>(`${this.api_URL}/${id}`)
+  }
+  getLimitProducts(){
+    return this.http.get<ProductType[]>(`${this.api_URL}?page=2&limit=6`)
+  }
+  removeProduct(id : any){
+    return this.http.get<ProductType[]>(`${this.api_URL}/${id}/${id}`)
   }
 }
