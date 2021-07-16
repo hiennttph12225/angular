@@ -34,6 +34,6 @@ export class productService {
     return this.http.get<ProductType[]>(`${this.api_URL}?page=2&limit=6`)
   }
   removeProduct(id : any){
-    return this.http.delete<ProductType[]>(`${this.api_URL}/${id}/${isUserId()}`,this.httpOptions)
+    return this.http.delete<ProductType>(`${this.api_URL}/${id}/${isUserId()}`,this.httpOptions)
   }
 }

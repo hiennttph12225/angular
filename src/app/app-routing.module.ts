@@ -1,3 +1,4 @@
+
 import { SigupPageComponent } from './page/website/sigup-page/sigup-page.component';
 
 import { ProductDashboardComponent } from './page/admin/product-dashboard/product-dashboard.component';
@@ -14,6 +15,7 @@ import { AboutComponent } from './page/website/about/about.component';
 import { HomepageComponent } from './page/website/homepage/homepage.component';
 import { NewsComponent } from './page/website/news/news.component';
 import { SiginPageComponent } from './page/website/sigin-page/sigin-page.component';
+import { ProductAddComponent } from './page/admin/product-add/product-add.component';
 const routes: Routes = [
   {
     path: '',
@@ -40,7 +42,8 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: AdminDashboradComponent },
-      {path : "product" , component:ProductDashboardComponent}
+      {path : "product" , component:ProductDashboardComponent},
+      {path : "product/add" , component : ProductAddComponent}
     ],
   },
   { path: '**', component: PageNotFoundComponent },

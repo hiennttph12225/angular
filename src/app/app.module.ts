@@ -17,9 +17,7 @@ import { LayoutWebsiteComponent } from './layout/website/layout-website/layout-w
 import { NewsComponent } from './page/website/news/news.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AdminDashboradComponent } from './page/admin/admin-dashborad/admin-dashborad.component';
-import { ProductAddComponent } from './product-add/product-add.component';
 import { productService } from './product.service';
-import { SigninComponent } from './signin/signin.component';
 import { HomepageComponent } from './page/website/homepage/homepage.component';
 import { SiginPageComponent } from './page/website/sigin-page/sigin-page.component';
 import { SigupPageComponent } from './page/website/sigup-page/sigup-page.component';
@@ -32,7 +30,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   declarations: [
     AppComponent,
     CategoryComponent,
-    ProductAddComponent,
     DetailComponent,
     AboutComponent,
     HeaderComponent,
@@ -40,7 +37,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     NewsComponent,
     ContactComponent,
     PageNotFoundComponent,
-    SigninComponent,
     AdminDashboradComponent,
     LayoutWebsiteComponent,
     LayoutAdminComponent,
