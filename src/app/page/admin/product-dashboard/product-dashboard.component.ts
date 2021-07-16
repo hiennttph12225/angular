@@ -17,4 +17,10 @@ export class ProductDashboardComponent implements OnInit {
     this.productService.getProducts().subscribe((data) =>{ this.products = data})
     ;
   }
+  removeItem(id:string){
+    this.productService.removeProduct(id).subscribe(data=>{
+      console.log(data);
+      // this.products = this.products.filter(item => item._id != data._id);
+    })
+  }
 }

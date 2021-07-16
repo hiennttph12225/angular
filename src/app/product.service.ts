@@ -1,10 +1,17 @@
+import { isToken, isUserId } from './auth/until';
 import { Injectable ,OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient , HttpHeaders } from '@angular/common/http';
 import {Observable} from 'rxjs'
 import { ProductType } from './productType';
 @Injectable()
 export class productService {
   products : ProductType[]
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      Authorization: `Bearer ${isToken()}`
+    })
+  };
   constructor(private http: HttpClient) {
   }
   ngOnInit(){
@@ -27,6 +34,6 @@ export class productService {
     return this.http.get<ProductType[]>(`${this.api_URL}?page=2&limit=6`)
   }
   removeProduct(id : any){
-    return this.http.get<ProductType[]>(`${this.api_URL}/${id}/${id}`)
+    return this.http.delete<ProductType[]>(`${this.api_URL}/${id}/${isUserId()}`,this.httpOptions)
   }
 }

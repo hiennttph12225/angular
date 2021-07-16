@@ -1,3 +1,5 @@
+import { SigupPageComponent } from './page/website/sigup-page/sigup-page.component';
+
 import { ProductDashboardComponent } from './page/admin/product-dashboard/product-dashboard.component';
 import { ProductsPageComponent } from './page/website/products-page/products-page.component';
 import { NgModule } from '@angular/core';
@@ -12,8 +14,6 @@ import { AboutComponent } from './page/website/about/about.component';
 import { HomepageComponent } from './page/website/homepage/homepage.component';
 import { NewsComponent } from './page/website/news/news.component';
 import { SiginPageComponent } from './page/website/sigin-page/sigin-page.component';
-import { SignupComponent } from './signup/signup.component';
-
 const routes: Routes = [
   {
     path: '',
@@ -29,7 +29,7 @@ const routes: Routes = [
       { path: 'news', component: NewsComponent },
       { path: 'contact', component: ContactComponent },
       { path: 'signin', component: SiginPageComponent },
-      { path: 'signup', component: SignupComponent },
+      { path: 'signup', component: SigupPageComponent },
       { path: 'product/:id', component: DetailComponent },
      
     ],

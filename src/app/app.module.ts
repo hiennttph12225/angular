@@ -20,7 +20,6 @@ import { AdminDashboradComponent } from './page/admin/admin-dashborad/admin-dash
 import { ProductAddComponent } from './product-add/product-add.component';
 import { productService } from './product.service';
 import { SigninComponent } from './signin/signin.component';
-import { SignupComponent } from './signup/signup.component';
 import { HomepageComponent } from './page/website/homepage/homepage.component';
 import { SiginPageComponent } from './page/website/sigin-page/sigin-page.component';
 import { SigupPageComponent } from './page/website/sigup-page/sigup-page.component';
@@ -42,7 +41,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ContactComponent,
     PageNotFoundComponent,
     SigninComponent,
-    SignupComponent,
     AdminDashboradComponent,
     LayoutWebsiteComponent,
     LayoutAdminComponent,
