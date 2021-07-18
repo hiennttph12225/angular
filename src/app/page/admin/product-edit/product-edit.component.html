@@ -1,0 +1,72 @@
+<form class="p-10">
+  <div class="text-center">
+    <img src="{{ product.image }}" alt="" />
+  </div>
+  <div class="grid grid-cols-2 gap-5">
+    <div>
+      <label for="" class="font-bold">Tên sản phẩm</label>
+      <input
+        class="w-full h-[40px] rounded-lg"
+        type="text"
+        value="{{ product.name }}"
+        name="name"
+        [(ngModel)]="product.name"
+      />
+    </div>
+    <div>
+      <label for="" class="font-bold">Giá sản phẩm</label>
+      <input
+        class="w-full h-[40px] rounded-lg"
+        type="number"
+        value="{{ product.price }}"
+        name="price"
+        [(ngModel)]="product.price"
+      />
+    </div>
+  </div>
+  <!-- ============ -->
+  <div class="grid grid-cols-2 gap-5">
+    <div>
+      <label for="" class="font-bold">Số lượng sản phẩm</label>
+      <input
+        class="w-full h-[40px] rounded-lg"
+        type="text"
+        value="{{ product.quantity }}"
+        name="quantity"
+        [(ngModel)]="product.quantity"
+      />
+    </div>
+    <div>
+      <label for="" class="font-bold">Danh mục sản phẩm</label>
+     <select class="w-full h-[40px] rounded-lg" [(ngModel)]="category" name="category" >
+           <option *ngFor="let item of category" [value]="item.name">{{item.name}}</option>
+     </select>
+    </div>
+  </div>
+  <div class="mt-3">
+    <label for="" class="font-bold">Ghi chú</label>
+    <textarea
+      name="description"
+      id=""
+      cols="163"
+      rows="10"
+      class=""
+      [(ngModel)]="product.description"
+      >{{ product.description }}</textarea
+    >
+  </div>
+
+  <button
+    class="
+      bg-indigo-700
+      rounded-md
+      text-white
+      w-full
+      h-[40px]
+      hover:bg-indigo-800
+    "
+    (click)="editProduct()"
+  >
+    Sửa sản phẩm
+  </button>
+</form>

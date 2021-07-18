@@ -1,0 +1,27 @@
+<form class="p-10">
+      <img src="{{image}}" alt="">
+      <input type="file" name="image" (change)="handleChangeImage($event)">
+  <div class="grid grid-cols-2 gap-5">
+    <input
+      type="text"
+      class="h-[40px] rounded-lg"
+      placeholder="Tên sản phẩm ... "
+      name="name"
+      [(ngModel)]="product.name"
+    />
+    <input
+      type="text"
+      class="h-[40px] rounded-lg"
+      placeholder="Giá sản phẩm ... "
+      name="price"
+      [(ngModel)]="product.price"
+    />
+  </div>
+  <div class="grid grid-cols-2 gap-5 mt-2">
+    <input type="text" class="h-[40px] rounded-lg"  name="quantity" [(ngModel)]="product.quantity" />
+    <select [(ngModel)]="product.cateID" class="h-[40px] rounded-lg" name="category">
+      <option *ngFor="let item of cate" value="item">{{ item.name }}</option>
+    </select>
+  </div>
+  <button (click)="handleAddProduct()">Thêm sản phẩm</button>
+</form>

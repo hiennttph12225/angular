@@ -1,3 +1,5 @@
+
+import { environment } from 'src/environments/environment';
 import { newService } from './service/new.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -25,7 +27,10 @@ import { ProductsPageComponent } from './page/website/products-page/products-pag
 import { ProductDetailPageComponent } from './page/website/product-detail-page/product-detail-page.component';
 import { ProductDashboardComponent } from './page/admin/product-dashboard/product-dashboard.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import { ProductAddComponent } from './product-add/product-add.component';
+import { ProductEditComponent } from './page/admin/product-edit/product-edit.component';
+import  firebase from 'firebase'
+firebase.initializeApp(environment.config);
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +51,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ProductsPageComponent,
     ProductDetailPageComponent,
     ProductDashboardComponent,
+    ProductAddComponent,
+    ProductEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,9 +60,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FormsModule,
     HttpClientModule,
     CarouselModule,
-    FontAwesomeModule
+    FontAwesomeModule,
   ],
-  providers: [productService,newService],
-  bootstrap: [AppComponent]
+  providers: [productService, newService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

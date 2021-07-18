@@ -1,6 +1,6 @@
+import { ProductEditComponent } from './page/admin/product-edit/product-edit.component';
 
 import { SigupPageComponent } from './page/website/sigup-page/sigup-page.component';
-
 import { ProductDashboardComponent } from './page/admin/product-dashboard/product-dashboard.component';
 import { ProductsPageComponent } from './page/website/products-page/products-page.component';
 import { NgModule } from '@angular/core';
@@ -15,7 +15,8 @@ import { AboutComponent } from './page/website/about/about.component';
 import { HomepageComponent } from './page/website/homepage/homepage.component';
 import { NewsComponent } from './page/website/news/news.component';
 import { SiginPageComponent } from './page/website/sigin-page/sigin-page.component';
-import { ProductAddComponent } from './page/admin/product-add/product-add.component';
+import { ProductAddComponent } from './product-add/product-add.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -43,7 +44,8 @@ const routes: Routes = [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: AdminDashboradComponent },
       {path : "product" , component:ProductDashboardComponent},
-      {path : "product/add" , component : ProductAddComponent}
+      {path : "product/add" , component : ProductAddComponent},
+      {path : "product/edit/:id" , component : ProductEditComponent}
     ],
   },
   { path: '**', component: PageNotFoundComponent },
