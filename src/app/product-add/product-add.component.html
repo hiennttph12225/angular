@@ -1,5 +1,5 @@
 <form class="p-10">
-      <img src="{{image}}" alt="">
+      <img src="{{image}}" class="rounded-lg w-[200px]" alt="">
       <input type="file" name="image" (change)="handleChangeImage($event)">
   <div class="grid grid-cols-2 gap-5">
     <input
@@ -19,9 +19,9 @@
   </div>
   <div class="grid grid-cols-2 gap-5 mt-2">
     <input type="text" class="h-[40px] rounded-lg"  name="quantity" [(ngModel)]="product.quantity" />
-    <select [(ngModel)]="product.cateID" class="h-[40px] rounded-lg" name="category">
-      <option *ngFor="let item of cate" value="item">{{ item.name }}</option>
-    </select>
+    <!-- <select [(ngModel)]="product.cateID" class="h-[40px] rounded-lg" name="category" *ngFor="let item of cate">
+      <option value="item._id">{{ item.name }}</option>
+    </select> -->
   </div>
   <button (click)="handleAddProduct()">Thêm sản phẩm</button>
 </form>

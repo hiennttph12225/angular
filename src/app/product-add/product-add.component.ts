@@ -28,7 +28,8 @@ export class ProductAddComponent implements OnInit {
     storeRef.put(file).then((e) => {
       storeRef.getDownloadURL().then(async (url) => {
         this.image = url
-        
+        console.log(url);
+        this.product.image = url
       });
     });
     

@@ -1,6 +1,6 @@
 import { CategoryService } from './../../../service/category.service';
 import { productService } from 'src/app/product.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -14,7 +14,8 @@ export class ProductEditComponent implements OnInit {
   constructor(
     private productService: productService,
     private route: ActivatedRoute,
-    private CategoryService : CategoryService
+    private CategoryService : CategoryService,
+    private Router : Router
   ) {}
 
   ngOnInit(): void {
@@ -26,8 +27,10 @@ export class ProductEditComponent implements OnInit {
   }
   getProduct() {
     this.route.params.subscribe((params) => {
-      this.productService.getDetailProduct(params.id).subscribe((data) => {
+      this.productService.getDetailProduct(params.id).subscribe((data:any) => {
         this.product = data;
+        this.product.image = data.image
+        
       });
     });
   }
@@ -35,6 +38,11 @@ export class ProductEditComponent implements OnInit {
     console.log('new data', this.product);
     this.productService
       .editProduct(this.product._id, this.product)
-      .subscribe((data) => console.log(data));
+      .subscribe((data) =>
+      {
+        alert("Cập nhật thành công !")
+        this.Router.navigateByUrl("/admin/product")
+      }
+     );
   }
 }

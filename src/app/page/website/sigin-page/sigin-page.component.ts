@@ -28,7 +28,6 @@ export class SiginPageComponent implements OnInit {
       .subscribe((data) => {
         localStorage.setItem('user' , JSON.stringify(data))
         this.authService.statusLogin = true;
-        console.log(this.authService.statusLogin);
         this.Router.navigateByUrl("/home")
       });
   }
