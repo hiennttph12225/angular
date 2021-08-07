@@ -20,7 +20,7 @@ export class ProductDashboardComponent implements OnInit {
   removeItem(id:string){
     this.productService.removeProduct(id).subscribe(data=>{
       console.log(data);      
-      this.products = this.products.filter(item => item._id != data._id)
+      this.products = this.products.filter(item => item.id != data.id)
     })
   }
 }

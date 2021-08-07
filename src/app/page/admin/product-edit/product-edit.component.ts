@@ -29,15 +29,18 @@ export class ProductEditComponent implements OnInit {
     this.route.params.subscribe((params) => {
       this.productService.getDetailProduct(params.id).subscribe((data:any) => {
         this.product = data;
+        // console.log(this.data.id);
         this.product.image = data.image
         
       });
     });
   }
+ 
+  
   editProduct() {
     console.log('new data', this.product);
     this.productService
-      .editProduct(this.product._id, this.product)
+      .editProduct(this.product.id, this.product)
       .subscribe((data) =>
       {
         alert("Cập nhật thành công !")

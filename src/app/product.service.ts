@@ -6,17 +6,12 @@ import { ProductType } from './productType';
 @Injectable()
 export class productService {
   products: ProductType[];
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${isToken()}`,
-    }),
-  };
+
   constructor(private http: HttpClient) {}
   ngOnInit() {
     this.getAllProducts();
   }
-  api_URL = 'https://headphoneapi.herokuapp.com/api/products';
+  api_URL = 'https://60f6e00eeb48e700179197a0.mockapi.io/product';
   getProducts(): Observable<ProductType[]> {
     return this.http.get<ProductType[]>(this.api_URL);
   }
@@ -34,22 +29,19 @@ export class productService {
   }
   addProduct(data: any) {
     return this.http.post<ProductType>(
-      `${this.api_URL}/${isUserId()}`,
-      data,
-      this.httpOptions
+      `${this.api_URL}`,
+      data
     );
   }
   removeProduct(id: any) {
     return this.http.delete<ProductType>(
-      `${this.api_URL}/${id}/${isUserId()}`,
-      this.httpOptions
+      `${this.api_URL}/${id}`
     );
   }
   editProduct(id: string, data: any) {
     return this.http.put<ProductType>(
-      `${this.api_URL}/${id}/${isUserId()}`,
+      `${this.api_URL}/${id}`,
       data,
-      this.httpOptions
     );
   }
 }

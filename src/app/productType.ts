@@ -1,5 +1,5 @@
 export interface ProductType  {
-    _id : any;
+    id : any;
     cateID: string;
     comment: any;
     description: string;

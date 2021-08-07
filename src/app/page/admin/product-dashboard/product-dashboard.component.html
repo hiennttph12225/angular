@@ -1,10 +1,24 @@
-<div class="overflow-x-auto">
+<div class="overflow-x-hidden">
   <div class="flex justify-between ml-5">
     <div>
-      <h1 class="text-left text-2xl uppercase">Danh sách sản phẩm</h1>
+      <h1
+        class="
+          text-left
+          ml-[40px]
+          cursor-pointer
+          text-2xl
+          font-bold
+          italic
+          uppercase
+        "
+      >
+        Danh sách sản phẩm
+      </h1>
     </div>
-    <button class="bg-green-500 w-[300px] text-white rounded-lg hover:bg-green-600">
-      <a routerLink="add"> Thêm sản phẩm </a>
+    <button
+      class="bg-pink-500 w-[300px] text-white rounded-lg hover:bg-green-600"
+    >
+      <a routerLink="add">Thêm sản phẩm </a>
     </button>
   </div>
   <div class="max-w-screen max-h-screen flex font-sans">
@@ -12,7 +26,7 @@
       <div class="bg-white shadow-md rounded my-6">
         <table class="min-w-max w-full table-auto">
           <thead>
-            <tr class="bg-gray-900 text-white uppercase text-sm leading-normal">
+            <tr class="bg-pink-500 text-white uppercase text-sm leading-normal">
               <th>STT</th>
               <th class="py-3 px-6 text-left">Hình ảnh</th>
               <th class="py-3 px-6 text-left">Tên sản phẩm</th>
@@ -20,7 +34,7 @@
               <th class="py-3 px-6 text-center">Giảm giá</th>
               <th class="py-3 px-6 text-center">Số lượng</th>
               <th class="py-3 px-6 text-center">Trạng thái</th>
-              <th class="py-3 px-6 text-center">Hành động</th>
+              <th class=" text-center">Hành động</th>
             </tr>
           </thead>
           <tbody
@@ -33,7 +47,7 @@
                 <div class="flex items-center">
                   <img
                     src="{{ product.image }}"
-                    class="w-[150px] rounded-3xl"
+                    class="w-[100px] rounded-3xl"
                     alt=""
                     srcset=""
                   />
@@ -41,32 +55,32 @@
               </td>
               <td class="py-3 px-6 text-left">
                 <div class="flex items-center">
-                  <span>{{ product.name }}</span>
+                  <span class=" font-bold">{{ product.name }}</span>
                 </div>
               </td>
               <td class="py-3 px-6 text-center">
-                <div class="flex items-center justify-center">
+                <div class="flex items-center justify-center font-bold">
                   {{ product.price }} VNĐ
                 </div>
               </td>
               <td class="py-3 px-6 text-center">
-                <span>{{ product.salePrice ? product.salePrice : 0 }}</span>
+                <span class=" font-bold">{{ product.salePrice ? product.salePrice : 0 }}</span>
               </td>
               <td class="py-3 px-6 text-center">
-                <span>{{ product.quantity }}</span>
+                <span class=" font-bold">{{ product.quantity }}</span>
               </td>
               <td class="py-3 px-6 text-center">
                 <span
-                  class="bg-gray-900 text-white py-1 px-3 rounded-full text-xs"
+                  class="bg-gray-900 text-white py-1 px-3 rounded-full text-xs font-bold"
                   >{{ product.status ? "còn hàng" : "Hết hàng" }}</span
                 >
               </td>
               <td class="py-3 px-6 text-center">
                 <div class="flex item-center justify-center">
-                  
                   <div>
-                    <a
-                    routerLink="/admin/product/edit/{{product._id}}"
+                    <a routerLink="/admin/product/edit/{{product.id}}">
+                      <button
+                     
                       class="
                         w-4
                         mr-2
@@ -87,11 +101,13 @@
                           d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
                         />
                       </svg>
+                    </button>
                     </a>
+                    
                   </div>
                   <div>
                     <button
-                      (click)="removeItem(product._id)"
+                      (click)="removeItem(product.id)"
                       class="
                         w-4
                         mr-2
